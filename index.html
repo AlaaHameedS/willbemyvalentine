@@ -49,6 +49,7 @@
       display: none;
       margin-top: 30px;
     }
+    
 </style>
 </head>
 
@@ -77,6 +78,9 @@
     />
   </div>
 
+  
+  </div>
+
 <script>
      let noMoveCount = 0;
 function moveNo() {
@@ -86,7 +90,7 @@ function moveNo() {
 
       if (noMoveCount >= 4) {
         document.getElementById("angryCat").style.display = "block";
-        yesBtn.style.display = "none"; 
+        noBtn.style.display = "none"; 
         return; 
       }
     const x = Math.random() * (window.innerWidth - 100);
@@ -96,11 +100,14 @@ function moveNo() {
 }
 
 function showLove() {
+    const angryImg = document.getElementById("angryCat");
     const noBtn = document.getElementById("no");
       const yesBtn = document.getElementById("yes");
     document.getElementById("result").style.display = "block";
     noBtn.style.display = "none"; 
+    angryImg.style.display = "none";
 }
+
 </script>
 
 </body>
