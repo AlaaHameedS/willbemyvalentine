@@ -45,6 +45,10 @@
         width: 250px;
         margin-top: 20px;
     }
+     #angryCat {
+      display: none;
+      margin-top: 30px;
+    }
 </style>
 </head>
 
@@ -57,7 +61,7 @@
 
 <div id="result">
     <h2>كنت أعرف 🥰💍</h2>
-    <
+    
       <img class="love-img" id="loveImg"
            src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif"
            alt="Cute Love" />
@@ -65,9 +69,26 @@
 
 </div>
 
+<div id="angryCat">
+    <h2>ستقبلين رغماً عنك 😼</h2>
+    <img
+      src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif"
+      alt="Angry Cat"
+    />
+  </div>
+
 <script>
+     let noMoveCount = 0;
 function moveNo() {
     const noBtn = document.getElementById("no");
+      const yesBtn = document.getElementById("yes");
+      noMoveCount++;
+
+      if (noMoveCount >= 4) {
+        document.getElementById("angryCat").style.display = "block";
+        yesBtn.style.display = "none"; 
+        return; 
+      }
     const x = Math.random() * (window.innerWidth - 100);
     const y = Math.random() * (window.innerHeight - 50);
     noBtn.style.left = x + "px";
@@ -75,7 +96,10 @@ function moveNo() {
 }
 
 function showLove() {
+    const noBtn = document.getElementById("no");
+      const yesBtn = document.getElementById("yes");
     document.getElementById("result").style.display = "block";
+    noBtn.style.display = "none"; 
 }
 </script>
 
